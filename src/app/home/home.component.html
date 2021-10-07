@@ -1,11 +1,11 @@
 <section>
   <div class='center-image' [ngClass]="{'center-image-web': (isHandset$ | async) === false}">
     <br /><br />
-    <a target="_blank" style=" font-family: 'Source Sans Pro';"
-      href="{{podcast != undefined? podcast.url: ''}}">
+    <a target="_blank" style=" font-family: 'Source Sans Pro'; text-decoration: none;"
+      href="https://podcast.thesoccerfam.com/">
       <div class="notification-space">
         <span style="font-family: sans-serif, fantasy;">
-          {{podcast != undefined? podcast.headline: ''}}...and more
+          Check out our latest podcast episodes here!
         </span>
         <br/>
         <span style="font-family:monospace; font-size: 15px;">...listen now!!</span>

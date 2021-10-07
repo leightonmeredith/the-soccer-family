@@ -4,37 +4,3 @@
     background-position: center;
     height: 350px;
 }
-
-table {
-    width: 100%;
-}
-
-.mat-row:nth-child(even) {
-    background-color: rgb(215, 232, 248);
-}
-
-.mat-row:nth-child(odd) {
-    background-color: white;
-}
-
-.mat-row:hover {
-    background-color: #f6f4f0;
-}
-
-td.mat-cell {
-    padding: 10px 20px 10px 20px;
-}
-
-tr.mat-row {
-    background: #79a1d8; /* Old browsers */
-}
-
-.table-header-text {
-    font-family: monospace;
-    font-size: 20px;
-    color: #fb3;
-}
-
-.table-row-text {
-    font-size: medium;
-}
