@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     const datePipe: DatePipe = new DatePipe('en-US');
     const currentDate = new Date();
     const pwdFormat = datePipe.transform(currentDate, 'MM\'test\'yyyy');
-    if (this.loginGroup.value.user === 'test' && this.loginGroup.value.password === pwdFormat) {
+    if(this.loginGroup.value.user === 'test' && this.loginGroup.value.password === pwdFormat){
       this.router.navigateByUrl('/hidden');
     }
   }
