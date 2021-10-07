@@ -4,93 +4,10 @@
 
   <div style="text-align: center; padding: 10px;">
     <span style="font-family: sans-serif, fantasy; color: #036;">
-      <h1>Check out our 'Soccer Family' stash</h1>
+      <h1 style="font-size: 3rem;">Check out The Soccer Family podcast stash</h1>
+      <a target="_blank" href="https://podcast.thesoccerfam.com">
+        <span style="font-size: 2rem;">Listen...</span><i class="fas fa-headphones-alt fa-3x icon-styling"></i>
+      </a>
     </span>
   </div>
-
-  <table mat-table [dataSource]="podcast$ | async" class="mat-elevation-z8">
-    <!-- DATE Column -->
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="table-header-text">
-          DATE
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">
-        <span class="table-row-text">
-          {{element.date}}
-        </span>
-      </td>
-    </ng-container>
-
-    <!-- TIME Column -->
-    <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="table-header-text">
-          TIME
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">
-        <span class="table-row-text">
-          {{element.time}} mins
-        </span>
-      </td>
-    </ng-container>
-
-    <!-- HEADLINE Column -->
-    <ng-container matColumnDef="headline">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="table-header-text">
-          HEADLINE
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">
-        <span class="table-row-text">
-          {{element.headline}}
-        </span>
-      </td>
-    </ng-container>
-
-    <!-- DESC Column -->
-    <ng-container matColumnDef="desc">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="table-header-text">
-          DESCRIPTION
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element"> <span class="table-row-text">
-          {{element.desc}}
-        </span>
-      </td>
-    </ng-container>
-
-    <!-- URL Column -->
-    <ng-container matColumnDef="url">
-      <th mat-header-cell *matHeaderCellDef> </th>
-      <td mat-cell *matCellDef="let element">
-        <a target="_blank" href="{{element.url}}">
-          <i class="fas fa-headphones-alt fa-2x icon-styling"></i>
-        </a>
-      </td>
-    </ng-container>
-
-    <!-- AND MORE.. -->
-    <ng-container matColumnDef="disclaimer">
-      <td mat-footer-cell *matFooterCellDef colspan="4">
-        If you want more stash, check out our 'Soccer Family' archives
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="disclaimer-icon">      
-      <td mat-footer-cell *matFooterCellDef >
-        <a target="_blank" href="https://www.patreon.com/thesoccerfamily">
-          <span>view archives...</span><i class="fas fa-headphones-alt fa-lg icon-styling"></i>
-        </a>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color: #036; padding: 20px;"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    <tr mat-footer-row *matFooterRowDef="['disclaimer','disclaimer-icon']" style="font-weight: bold;font-style: italic;"></tr>
-  </table>
 </section>

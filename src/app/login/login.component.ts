@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
     user: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
-  hide = true;  
-  
+  hide = true;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   validateUser() {
     const datePipe: DatePipe = new DatePipe('en-US');
     const currentDate = new Date();
-    const pwdFormat = datePipe.transform(currentDate, "MM'test'yyyy");
+    const pwdFormat = datePipe.transform(currentDate, 'MM\'test\'yyyy');
     if(this.loginGroup.value.user === 'test' && this.loginGroup.value.password === pwdFormat){
       this.router.navigateByUrl('/hidden');
     }
