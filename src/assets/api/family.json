@@ -3,7 +3,7 @@
         "id": 1,
         "name": "M",
         "img": "/assets/img/m.png",
-        "desc": "",
+        "desc": "M has the headphones!",
         "team": "Manchester United",
         "country": "Jamaica"
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Nah",
         "img": "/assets/img/nah.png",
-        "desc": "",
+        "desc": "Nah has Napoleon complex!",
         "team": "Chelsea",
         "country": "Ethiopia"
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "name": "Pros",
         "img": "/assets/img/pros.png",
-        "desc": "",
+        "desc": "Pros is fat!",
         "team": "Arsenal",
         "country": "Dominica"
     },
@@ -27,7 +27,7 @@
           "id": 4,
           "name": "B",
           "img": "/assets/img/b.png",
-          "desc": "",
+          "desc": "B is ugly!",
           "team": "Arsenal",
           "country": "Jamaica"
     },
@@ -35,7 +35,7 @@
           "id": 5,
           "name": "Marvo",
           "img": "/assets/img/marvo.png",
-          "desc": "",
+          "desc": "Marvo is an asshole!",
           "team": "Chelsea",
           "country": "Kenya"
     },
@@ -43,7 +43,7 @@
           "id": 6,
           "name": "KG",
           "img": "/assets/img/kg.png",
-          "desc": "",
+          "desc": "KG is insecure!",
           "team": "Chelsea",
           "country": "Antigua"
     },
@@ -51,7 +51,7 @@
           "id": 7,
           "name": "Bazzy",
           "img": "/assets/img/bazzy.png",
-          "desc": "",
+          "desc": "Bazzy needs help!",
           "team": "Arsenal",
           "country": "Côte d'Ivoire"
     },
@@ -59,7 +59,7 @@
           "id": 8,
           "name": "Akan",
           "img": "/assets/img/akan.png",
-          "desc": "",
+          "desc": "Akan is weird!",
           "team": "Arsenal",
           "country": "Nigeria"
     }
