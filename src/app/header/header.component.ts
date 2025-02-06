@@ -5,12 +5,11 @@ import {MatMenuModule} from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { RoutesConstants } from '../shared/utils/constants';
 import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatMenuModule, MatButtonModule, BrowserAnimationsModule, MatIconModule],
+  imports: [MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

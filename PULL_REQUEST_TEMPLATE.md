@@ -20,7 +20,7 @@ Example:
 
 ## JIRA Checklist
 
-- [ ] Did you provide the JIRA link? https://github.com/leightonmeredith/island-stars-academy/issues/##
+- [ ] Did you provide the JIRA link? #
 
 ## Checklist
 
