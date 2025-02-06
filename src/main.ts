@@ -8,6 +8,7 @@ import { HomeComponent } from './app/home/home.component';
 import { AboutComponent } from './app/about/about.component';
 import { CoachesComponent } from './app/coaches/coaches.component';
 import { ProgramComponent } from './app/program/program.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideAnimations(),
     importProvidersFrom(RouterModule.forRoot(routes, { useHash: true })), // Set routing with hash strategy
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ]
