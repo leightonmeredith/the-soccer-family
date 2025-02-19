@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoutesConstants } from '../shared/utils/constants';
+import packageJson from '../../../package.json';
 
 @Component({
   selector: 'app-footer',
@@ -11,6 +12,7 @@ import { RoutesConstants } from '../shared/utils/constants';
 })
 export class FooterComponent {
   private router = inject(Router);
+  version = packageJson.version;
 
   goToHome() {
     this.router.navigate([RoutesConstants.HOME])
