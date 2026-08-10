@@ -1,22 +1,24 @@
 
 <div id="container">
   <div [ngClass]="isMobile ? 'mobile-home-view' : 'desktop-home-view'">
-    <div *ngFor="let item of items; let i = index" class="mat-card-container">
-      <mat-card class="example-card" appearance="outlined">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ item.title }}</mat-card-title>
-          <mat-card-subtitle>{{ item.subtitle }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../assets/img/isa-logo-transparent.png" style="background-color: rgb(134, 116, 71);" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>{{ item.content }}</p>
-          <br />
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-flat-button  (click)="navigate(item.route)" style="background-color: black; color: white;" >{{ item.button }}</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+    @for (item of items; track item; let i = $index) {
+      <div class="mat-card-container">
+        <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-subtitle>{{ item.subtitle }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../assets/img/isa-logo-transparent.png" style="background-color: rgb(134, 116, 71);" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>{{ item.content }}</p>
+            <br />
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-flat-button  (click)="navigate(item.route)" style="background-color: black; color: white;" >{{ item.button }}</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    }
   </div>
 </div>
