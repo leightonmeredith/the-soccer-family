@@ -7,11 +7,10 @@ import { RoutesConstants } from '../shared/utils/constants';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   private router = inject(Router)
