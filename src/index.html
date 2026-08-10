@@ -8,6 +8,18 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <script>
+    const ws = new WebSocket('ws://localhost:8082');
+    ws.addEventListener('open', () => {
+      console.log('we are connected!');
+
+      ws.send('Hey how are you')
+    })
+
+    ws.addEventListener('message', e => {
+      console.log(e) //could do destruction and use pass ({data}) instead of passing e
+    })
+  </script>
   <app-root></app-root>
 </body>
 </html>
