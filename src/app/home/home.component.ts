@@ -10,10 +10,10 @@ import { RoutesConstants } from '../shared/utils/constants';
   standalone: true,
   imports: [CommonModule, MatCardModule, MatButtonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  private router = inject(Router)
+  private router = inject(Router);
   items = [
     {
       title: 'Who We Are',
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
               building character, and inspiring a lifelong love of the beautiful game. Located in the heart of our island,
               we provide an engaging and supportive environment for kids ages 4-15 to grow both on and off the field.`,
       button: 'LEARN MORE',
-      route: 'about'
+      route: 'about',
     },
     {
       title: 'Meet The Coaches',
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
               Whether your child dreams of becoming a professional athlete or simply wants to enjoy the game while building teamwork
               and leadership skills, we are here to guide their journey.`,
       button: 'LEARN MORE',
-      route: 'coaches'
+      route: 'coaches',
     },
     {
       title: 'Programs',
@@ -41,8 +41,8 @@ export class HomeComponent implements OnInit {
               and empower players of all skill levels. Whether your child is new to the game or striving for elite performance,
               our programs are tailored to foster growth, build confidence, and ignite a lifelong love for soccer.`,
       button: 'REGISTER NOW',
-      route: 'programs'
-    }
+      route: 'programs',
+    },
   ];
   isMobile: boolean = false;
 
@@ -69,7 +69,6 @@ export class HomeComponent implements OnInit {
       default:
         break;
     }
-
   }
 
   private checkScreenSize() {
