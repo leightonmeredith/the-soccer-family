@@ -3,7 +3,7 @@ import { AppComponent } from './app/app.component';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { HomeComponent } from './app/home/home.component';
 import { AboutComponent } from './app/about/about.component';
 import { CoachesComponent } from './app/coaches/coaches.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideAnimations(),
+    provideZoneChangeDetection(),provideAnimations(),
     importProvidersFrom(RouterModule.forRoot(routes, { useHash: true })), // Set routing with hash strategy
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ]
