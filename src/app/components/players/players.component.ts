@@ -7,22 +7,10 @@ import {
 } from '@angular/core';
 import { PlayerComponent } from './player/player.component';
 import { MatDialog } from '@angular/material/dialog';
-
-export interface RosterPlayer {
-  id: number;
-  firstName: string;
-  lastName: string;
-  age: number;
-  ageGroup: string;
-  team: string;
-  jerseyNumber: number;
-  primaryPosition: string;
-  secondaryPosition?: string;
-  preferredFoot: 'Left' | 'Right' | 'Both';
-  yearsAtAcademy: number;
-  season: string;
-  photo: string;
-}
+import { PlayerService } from '../../services/player.service';
+import { Player } from '../../shared/interfaces/player.model';
+import { Observable } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 type RosterGroup = 'U6' | 'U12' | 'U17' | 'Over 18';
 
@@ -41,114 +29,15 @@ interface RosterTab {
 })
 export class PlayersComponent {
   private readonly dialog = inject(MatDialog);
+  private readonly playerService = inject(PlayerService);
 
-  /*
-   * Replace this mock data with your API/service later.
-   */
-  readonly players = signal<RosterPlayer[]>([
-    {
-      id: 1,
-      firstName: 'Malik',
-      lastName: 'Johnson',
-      age: 12,
-      ageGroup: 'U12',
-      team: 'U12 Development',
-      jerseyNumber: 11,
-      primaryPosition: 'Right Wing',
-      secondaryPosition: 'Forward',
-      preferredFoot: 'Right',
-      yearsAtAcademy: 3,
-      season: '2026',
-      photo: 'assets/img/coaches/leighton.jpg',
-    },
-    {
-      id: 2,
-      firstName: 'Andre',
-      lastName: 'Williams',
-      age: 10,
-      ageGroup: 'U12',
-      team: 'U12 Development',
-      jerseyNumber: 7,
-      primaryPosition: 'Midfielder',
-      preferredFoot: 'Right',
-      yearsAtAcademy: 2,
-      season: '2026',
-      photo: 'assets/img/coaches/dwayne.jpg',
-    },
-    {
-      id: 3,
-      firstName: 'Jayden',
-      lastName: 'Brown',
-      age: 6,
-      ageGroup: 'U6',
-      team: 'U6 Academy',
-      jerseyNumber: 8,
-      primaryPosition: 'Forward',
-      preferredFoot: 'Right',
-      yearsAtAcademy: 1,
-      season: '2026',
-      photo: 'assets/img/coaches/dwayne.jpg',
-    },
-    {
-      id: 4,
-      firstName: 'Nathan',
-      lastName: 'Campbell',
-      age: 5,
-      ageGroup: 'U6',
-      team: 'U6 Academy',
-      jerseyNumber: 4,
-      primaryPosition: 'Midfielder',
-      preferredFoot: 'Both',
-      yearsAtAcademy: 1,
-      season: '2026',
-      photo: 'assets/img/coaches/malcolm.jpg',
-    },
-    {
-      id: 5,
-      firstName: 'Dario',
-      lastName: 'Smith',
-      age: 16,
-      ageGroup: 'U17',
-      team: 'U17 Academy',
-      jerseyNumber: 10,
-      primaryPosition: 'Attacking Midfielder',
-      secondaryPosition: 'Forward',
-      preferredFoot: 'Left',
-      yearsAtAcademy: 4,
-      season: '2026',
-      photo: 'assets/img/coaches/leighton.jpg',
-    },
-    {
-      id: 6,
-      firstName: 'Jordan',
-      lastName: 'Thomas',
-      age: 15,
-      ageGroup: 'U17',
-      team: 'U17 Academy',
-      jerseyNumber: 5,
-      primaryPosition: 'Center Back',
-      preferredFoot: 'Right',
-      yearsAtAcademy: 3,
-      season: '2026',
-      photo: 'assets/img/coaches/shana.jpg',
-    },
-    {
-      id: 7,
-      firstName: 'Marcus',
-      lastName: 'Reid',
-      age: 19,
-      ageGroup: 'Over 18',
-      team: 'Senior Academy',
-      jerseyNumber: 9,
-      primaryPosition: 'Forward',
-      preferredFoot: 'Right',
-      yearsAtAcademy: 4,
-      season: '2026',
-      photo: 'assets/img/coaches/fabian.jpg',
-    },
-  ]);
+  readonly players$: Observable<Player[]> = this.playerService.getPlayers();
 
-  readonly selectedPlayer = signal<RosterPlayer | null>(null);
+  readonly players = toSignal(this.players$, {
+    initialValue: [] as Player[],
+  });
+
+  readonly selectedPlayer = signal<Player | null>(null);
 
   /*
    * Finds which tabs actually contain players.
@@ -215,7 +104,7 @@ export class PlayersComponent {
     this.activeTab.set(tab);
   }
 
-  openPlayer(player: RosterPlayer): void {
+  openPlayer(player: Player): void {
     this.dialog.open(PlayerComponent, {
       data: { player },
       width: '1200px',
@@ -227,33 +116,9 @@ export class PlayersComponent {
 
       panelClass: 'player-profile-dialog',
     });
-    // this.selectedPlayer.set(player);
-
-    // this.playerDialog?.nativeElement.showModal();
   }
 
-  // closePlayer(): void {
-  //   this.playerDialog?.nativeElement.close();
-  //   this.selectedPlayer.set(null);
-  // }
-
-  // onDialogClick(event: MouseEvent): void {
-  //   const dialog = event.currentTarget as HTMLDialogElement;
-
-  //   /*
-  //    * Clicking directly on the dialog element means
-  //    * the user clicked the backdrop rather than its content.
-  //    */
-  //   if (event.target === dialog) {
-  //     this.closePlayer();
-  //   }
-  // }
-
-  // onDialogClose(): void {
-  //   this.selectedPlayer.set(null);
-  // }
-
-  getFullName(player: RosterPlayer): string {
+  getFullName(player: Player): string {
     return `${player.firstName} ${player.lastName}`;
   }
 

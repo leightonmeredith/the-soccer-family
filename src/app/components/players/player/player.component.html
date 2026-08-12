@@ -6,7 +6,7 @@
         <img
           class="player-photo"
           [src]="playerDetails().photo"
-          [alt]="this.displayName + ' player profile photo'"
+          [alt]="displayName() + ' player profile photo'"
         />
 
         <div class="jersey-number" aria-label="Jersey number">
@@ -20,7 +20,7 @@
           ISLAND STARS ACADEMY
         </div>
 
-        <h1>{{ this.displayName }}</h1>
+        <h1>{{ displayName() }}</h1>
 
         <p class="player-role">
           {{ playerDetails().ageGroup }}

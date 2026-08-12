@@ -1,87 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
-type DevelopmentCategory =
-  | 'Technical'
-  | 'Physical'
-  | 'Tactical'
-  | 'Teamwork';
-
-interface PlayerStat {
-  label: string;
-  value: string | number;
-}
-
-interface DevelopmentRating {
-  category: DevelopmentCategory;
-  value: number;
-}
-
-interface PlayerBadge {
-  id: number;
-  name: string;
-  icon: string;
-  description: string;
-  earnedDate: string;
-}
-
-interface PersonalBest {
-  id: number;
-  label: string;
-  value: string;
-  previousValue?: string;
-}
-
-interface DevelopmentGoal {
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-interface JourneyEvent {
-  id: number;
-  year: number;
-  title: string;
-  description?: string;
-}
-
-interface Highlight {
-  id: number;
-  title: string;
-  thumbnail: string;
-  videoUrl?: string;
-}
-
-interface Player {
-  id: number;
-  firstName: string;
-  lastInitial: string;
-  age: number;
-  ageGroup: string;
-  team: string;
-  jerseyNumber: number;
-  primaryPosition: string;
-  secondaryPosition?: string;
-  preferredFoot: 'Left' | 'Right' | 'Both';
-  yearsAtAcademy: number;
-  season: string;
-  photo: string;
-
-  stats: PlayerStat[];
-  development: DevelopmentRating[];
-  badges: PlayerBadge[];
-  personalBests: PersonalBest[];
-  goals: DevelopmentGoal[];
-  journey: JourneyEvent[];
-  highlights: Highlight[];
-
-  coachAssessment?: {
-    title: string;
-    strengths: string;
-    currentFocus: string;
-    nextGoal: string;
-  };
-}
+import { PlayerDetails } from '../../../shared/interfaces/player.model';
+import { Highlight } from '../../../shared/interfaces/player-highlight.model';
 
 @Component({
   selector: 'app-player',
@@ -91,12 +11,10 @@ interface Player {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayerComponent {
-
-
-  readonly playerDetails = signal<Player>({
+  readonly playerDetails = signal<PlayerDetails>({
     id: 11,
     firstName: 'Malik',
-    lastInitial: 'J.',
+    lastName: 'J.',
     age: 5,
     ageGroup: 'U12',
     team: 'U12 Development',
@@ -256,22 +174,15 @@ export class PlayerComponent {
       title: 'Summer 2026 Assessment',
       strengths:
         'Excellent first touch and willingness to attack defenders in 1v1 situations.',
-      currentFocus:
-        'Improve decision-making after beating the first defender.',
+      currentFocus: 'Improve decision-making after beating the first defender.',
       nextGoal:
         'Complete 8 out of 10 weak-foot passes during the next technical assessment.',
     },
   });
 
-  readonly player = inject<Player>(
-    MAT_DIALOG_DATA,
-  );
+  readonly player = inject<PlayerDetails>(MAT_DIALOG_DATA);
 
-  private readonly dialogRef =
-    inject(MatDialogRef<PlayerComponent>);
-
-  readonly displayName =
-    `${this.player.firstName} ${this.player.lastInitial}`;
+  private readonly dialogRef = inject(MatDialogRef<PlayerComponent>);
 
   close(): void {
     this.dialogRef.close();
@@ -282,7 +193,7 @@ export class PlayerComponent {
    * Fun, skills, participation and achievements.
    */
   readonly isFoundationPlayer = computed(
-    () => this.playerDetails().age >= 4 && this.playerDetails().age <= 7
+    () => this.playerDetails().age >= 4 && this.playerDetails().age <= 7,
   );
 
   /**
@@ -290,7 +201,7 @@ export class PlayerComponent {
    * Development plus basic competitive information.
    */
   readonly isDevelopmentPlayer = computed(
-    () => this.playerDetails().age >= 8 && this.playerDetails().age <= 12
+    () => this.playerDetails().age >= 8 && this.playerDetails().age <= 12,
   );
 
   /**
@@ -298,15 +209,15 @@ export class PlayerComponent {
    * Full performance and recruitment profile.
    */
   readonly isPerformancePlayer = computed(
-    () => this.playerDetails().age >= 13 && this.playerDetails().age <= 17
+    () => this.playerDetails().age >= 13 && this.playerDetails().age <= 17,
   );
 
-  // readonly displayName = computed(
-  //   () => `${this.playerDetails().firstName} ${this.playerDetails().lastInitial}`
-  // );
+  readonly displayName = computed(
+    () => `${this.playerDetails().firstName} ${this.playerDetails().lastName}`,
+  );
 
   readonly completedGoals = computed(
-    () => this.playerDetails().goals.filter((goal) => goal.completed).length
+    () => this.playerDetails().goals.filter((goal) => goal.completed).length,
   );
 
   readonly totalGoals = computed(() => this.playerDetails().goals.length);
@@ -322,7 +233,7 @@ export class PlayerComponent {
 
     return Math.round(
       development.reduce((total, item) => total + item.value, 0) /
-        development.length
+        development.length,
     );
   });
 
