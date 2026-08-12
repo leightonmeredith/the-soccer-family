@@ -1,7 +1,7 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoutesConstants } from '../shared/utils/constants';
-import packageJson from '../../../package.json';
+import packageJson from '../../../../package.json';
+import { RoutesConstants } from '../../shared/constants/routes.constant';
 
 @Component({
   selector: 'app-footer',

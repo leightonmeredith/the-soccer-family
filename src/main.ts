@@ -3,11 +3,11 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
-import { HomeComponent } from './app/home/home.component';
-import { AboutComponent } from './app/about/about.component';
-import { CoachesComponent } from './app/coaches/coaches.component';
-import { ProgramComponent } from './app/program/program.component';
-import { PlayersComponent } from './app/players/players.component';
+import { HomeComponent } from './app/components/home/home.component';
+import { AboutComponent } from './app/components/about/about.component';
+import { CoachesComponent } from './app/components/coaches/coaches.component';
+import { PlayersComponent } from './app/components/players/players.component';
+import { ProgramComponent } from './app/components/program/program.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
