@@ -7,28 +7,32 @@ import { RoutesConstants } from '../shared/utils/constants';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-    selector: 'app-header',
-    imports: [MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule],
-    templateUrl: './header.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './header.component.scss'
+  selector: 'app-header',
+  imports: [MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule],
+  templateUrl: './header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  private router = inject(Router)
+  private router = inject(Router);
 
   goToHome() {
-    this.router.navigate([RoutesConstants.HOME])
+    this.router.navigate([RoutesConstants.HOME]);
   }
 
   goToAbout() {
-    this.router.navigate([RoutesConstants.ABOUT])
+    this.router.navigate([RoutesConstants.ABOUT]);
   }
 
   goToCoaches() {
-    this.router.navigate([RoutesConstants.COACHES])
+    this.router.navigate([RoutesConstants.COACHES]);
+  }
+
+  goToPlayers() {
+    this.router.navigate([RoutesConstants.PLAYERS]);
   }
 
   goToPrograms() {
-    this.router.navigate([RoutesConstants.PROGRAMS])
+    this.router.navigate([RoutesConstants.PROGRAMS]);
   }
 }

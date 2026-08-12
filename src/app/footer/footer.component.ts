@@ -25,6 +25,10 @@ export class FooterComponent {
     this.router.navigate([RoutesConstants.COACHES]);
   }
 
+  goToPlayers() {
+    this.router.navigate([RoutesConstants.PLAYERS]);
+  }
+
   goToPrograms() {
     this.router.navigate([RoutesConstants.PROGRAMS]);
   }
