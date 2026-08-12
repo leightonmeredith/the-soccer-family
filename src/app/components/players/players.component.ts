@@ -106,7 +106,7 @@ export class PlayersComponent {
 
   openPlayer(player: Player): void {
     this.dialog.open(PlayerComponent, {
-      data: { player },
+      data: { id: player.id },
       width: '1200px',
       maxWidth: '95vw',
       maxHeight: '94vh',

@@ -20,16 +20,13 @@ export interface Player {
   yearsAtAcademy: number;
   season: string;
   photo: string;
-}
-
-export interface PlayerDetails extends Player {
-  stats: PlayerStat[];
-  development: DevelopmentRating[];
-  badges: PlayerBadge[];
-  personalBests: PersonalBest[];
-  goals: DevelopmentGoal[];
-  journey: JourneyEvent[];
-  highlights: Highlight[];
+  stats?: PlayerStat[];
+  development?: DevelopmentRating[];
+  badges?: PlayerBadge[];
+  personalBests?: PersonalBest[];
+  goals?: DevelopmentGoal[];
+  journey?: JourneyEvent[];
+  highlights?: Highlight[];
 
   coachAssessment?: {
     title: string;
@@ -38,3 +35,4 @@ export interface PlayerDetails extends Player {
     nextGoal: string;
   };
 }
+
