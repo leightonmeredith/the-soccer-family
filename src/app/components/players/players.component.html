@@ -1,0 +1,144 @@
+<main class="players-page">
+
+  <header class="players-hero">
+    <div class="players-hero__content">
+      <div>
+        <p class="eyebrow">
+          Island Stars Academy
+        </p>
+
+        <h1>Player Roster</h1>
+
+        <p class="players-hero__description">
+          Meet the players representing Island Stars Academy.
+        </p>
+      </div>
+
+      <div class="roster-count">
+        <strong>{{ totalPlayers() }}</strong>
+
+        <span>
+          {{ totalPlayers() === 1 ? 'Player' : 'Players' }}
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <section class="players-container">
+    <!-- AGE GROUP TABS -->
+    @if (availableTabs().length) {
+      <nav
+        class="roster-tabs"
+        aria-label="Player age groups"
+      >
+        @for (tab of availableTabs(); track tab.label) {
+          <button
+            type="button"
+            class="roster-tab"
+            [class.roster-tab--active]="activeTabLabel() === tab.label"
+            [attr.aria-selected]="activeTabLabel() === tab.label"
+            (click)="setActiveTab(tab.label)"
+          >
+            <span>
+              {{ tab.label }}
+            </span>
+
+            <span class="roster-tab__count">
+              {{ tab.count }}
+            </span>
+          </button>
+        }
+      </nav>
+    }
+
+    <!-- CURRENT ROSTER HEADER -->
+    <div class="roster-heading">
+      <div>
+        <p class="eyebrow">
+          Roster
+        </p>
+
+        <h2>
+          {{ activeTabLabel() }}
+        </h2>
+      </div>
+
+      <span class="roster-heading__count">
+        {{ filteredPlayers().length }}
+        {{ filteredPlayers().length === 1 ? 'player' : 'players' }}
+      </span>
+    </div>
+
+    <!-- PLAYER CARDS -->
+    @if (filteredPlayers().length) {
+      <div class="players-grid">
+        @for (player of filteredPlayers(); track player.id) {
+          <button
+            type="button"
+            class="player-card"
+            (click)="openPlayer(player)"
+            [attr.aria-label]="'View profile for ' + getFullName(player)"
+          >
+            <div class="player-card__photo-wrapper">
+              <img
+                class="player-card__photo"
+                [src]="player.photo"
+                [alt]="getFullName(player)"
+              />
+
+              <div
+                class="player-card__jersey"
+                aria-label="Jersey number"
+              >
+                #{{ player.jerseyNumber }}
+              </div>
+            </div>
+
+            <div class="player-card__content">
+              <div class="player-card__name-row">
+                <div>
+                  <h3>
+                    {{ getFullName(player) }}
+                  </h3>
+
+                  <p>
+                    {{ player.primaryPosition }}
+                  </p>
+                </div>
+
+                <span
+                  class="view-profile"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </div>
+
+              <div class="player-card__details">
+                <span>
+                  {{ player.ageGroup }}
+                </span>
+
+                <span aria-hidden="true">
+                  •
+                </span>
+
+                <span>
+                  {{ player.team }}
+                </span>
+              </div>
+            </div>
+          </button>
+        }
+      </div>
+    } @else {
+      <div class="empty-roster">
+        <h3>No players found</h3>
+
+        <p>
+          There are currently no players assigned to this age group.
+        </p>
+      </div>
+    }
+  </section>
+</main>

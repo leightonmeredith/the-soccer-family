@@ -3,7 +3,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { RoutesConstants } from '../shared/utils/constants';
+import { RoutesConstants } from '../../shared/constants/routes.constant';
 
 @Component({
   selector: 'app-home',
