@@ -119,7 +119,8 @@ export class PlayersComponent {
   }
 
   getFullName(player: Player): string {
-    return `${player.firstName} ${player.lastName}`;
+  const isSeniorPlayer = computed(() => player.age >= 18);
+  return `${player.firstName} ${isSeniorPlayer() ? player.lastName : player.lastName.substring(0, 1) + '.'}`;
   }
 
   private getPlayerGroup(age: number): RosterGroup {

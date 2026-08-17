@@ -59,8 +59,11 @@ export class PlayerComponent {
     () => this.playerDetails().age >= 13 && this.playerDetails().age <= 17,
   );
 
+  readonly isSeniorPlayer = computed(() => this.playerDetails().age >= 18);
+
   readonly displayName = computed(
-    () => `${this.playerDetails().firstName} ${this.playerDetails().lastName}`,
+    () =>
+      `${this.playerDetails().firstName} ${this.isSeniorPlayer() ? this.playerDetails().lastName : this.playerDetails().lastName.substring(0, 1) + '.'}`,
   );
 
   readonly completedGoals = computed(
