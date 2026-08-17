@@ -21,9 +21,7 @@ export class PlayerComponent {
   private readonly playerService = inject(PlayerService);
   readonly player = inject<Player>(MAT_DIALOG_DATA);
 
-  readonly playerDetails$ = this.playerService.getPlayer(
-    this.player.id.toString(),
-  );
+  readonly playerDetails$ = this.playerService.getPlayer(this.player.id);
 
   readonly playerDetails = toSignal(this.playerDetails$, {
     initialValue: {} as Player,
@@ -59,6 +57,10 @@ export class PlayerComponent {
     () => this.playerDetails().age >= 13 && this.playerDetails().age <= 17,
   );
 
+  /**
+   * 18+:
+   * Similar to 13-17 but can display last name.
+   */
   readonly isSeniorPlayer = computed(() => this.playerDetails().age >= 18);
 
   readonly displayName = computed(

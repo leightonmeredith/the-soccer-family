@@ -5,7 +5,7 @@ import { Player } from '../shared/interfaces/player.model';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlayerService {
   private apiUrl = '/api/players';
@@ -633,10 +633,10 @@ export class PlayerService {
     ]);
   }
 
-  getPlayer(id: string): Observable<Player> {
+  getPlayer(id: number): Observable<Player> {
     // return this.http.get<Player>(`${this.apiUrl}/${id}`);
     return this.getPlayers().pipe(
-      map(players => players.find(player => player.id.toString() === id) as Player)
+      map((players) => players.find((player) => player.id === id) as Player),
     );
   }
 
