@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "firstName": "Christiano",
+    "lastName": "Ronaldo",
+    "dateOfBirth": "2010-12-31",
+    "ageGroup": "U12",
+    "team": "U12 Development",
+    "jerseyNumber": 11,
+    "primaryPosition": "Right Wing",
+    "secondaryPosition": "Forward",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 3,
+    "season": "2026",
+    "photo": "assets/img/coaches/leighton.jpg",
+    "badges": [
+      {
+        "id": 1,
+        "name": "First Goal",
+        "icon": "⚽",
+        "description": "Scored first academy goal",
+        "earnedDate": "Mar 2024"
+      },
+      {
+        "id": 2,
+        "name": "Passing Master",
+        "icon": "🎯",
+        "description": "Completed the passing challenge",
+        "earnedDate": "Jun 2025"
+      },
+      {
+        "id": 3,
+        "name": "Training Streak",
+        "icon": "🔥",
+        "description": "Attended 10 training sessions in a row",
+        "earnedDate": "Jan 2026"
+      },
+      {
+        "id": 4,
+        "name": "Player of the Week",
+        "icon": "⭐",
+        "description": "Outstanding training performance",
+        "earnedDate": "Apr 2026"
+      },
+      {
+        "id": 5,
+        "name": "Great Teammate",
+        "icon": "🤝",
+        "description": "Demonstrated outstanding teamwork",
+        "earnedDate": "May 2026"
+      },
+      {
+        "id": 6,
+        "name": "Weak Foot Challenge",
+        "icon": "🦶",
+        "description": "Completed the weak-foot challenge",
+        "earnedDate": "Jul 2026"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "Diogo",
+    "lastName": "Dalot",
+    "dateOfBirth": "2020-12-31",
+    "ageGroup": "U12",
+    "team": "U12 Development",
+    "jerseyNumber": 7,
+    "primaryPosition": "Midfielder",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 2,
+    "season": "2026",
+    "photo": "assets/img/isa-logo.png"
+  },
+  {
+    "id": 3,
+    "firstName": "Leny",
+    "lastName": "Yoro",
+    "dateOfBirth": "2016-12-31",
+    "ageGroup": "U6",
+    "team": "U6 Academy",
+    "jerseyNumber": 8,
+    "primaryPosition": "Defender",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 1,
+    "season": "2026",
+    "photo": "assets/img/coaches/dwayne.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Luke",
+    "lastName": "Shaw",
+    "dateOfBirth": "2006-12-31",
+    "ageGroup": "U6",
+    "team": "U6 Academy",
+    "jerseyNumber": 4,
+    "primaryPosition": "Midfielder",
+    "preferredFoot": "Both",
+    "yearsAtAcademy": 1,
+    "season": "2026",
+    "photo": "assets/img/coaches/malcolm.jpg",
+    "badges": [
+      {
+        "id": 1,
+        "name": "First Goal",
+        "icon": "⚽",
+        "description": "Scored first academy goal",
+        "earnedDate": "Mar 2024"
+      },
+      {
+        "id": 2,
+        "name": "Passing Master",
+        "icon": "🎯",
+        "description": "Completed the passing challenge",
+        "earnedDate": "Jun 2025"
+      },
+      {
+        "id": 3,
+        "name": "Training Streak",
+        "icon": "🔥",
+        "description": "Attended 10 training sessions in a row",
+        "earnedDate": "Jan 2026"
+      },
+      {
+        "id": 4,
+        "name": "Player of the Week",
+        "icon": "⭐",
+        "description": "Outstanding training performance",
+        "earnedDate": "Apr 2026"
+      },
+      {
+        "id": 5,
+        "name": "Great Teammate",
+        "icon": "🤝",
+        "description": "Demonstrated outstanding teamwork",
+        "earnedDate": "May 2026"
+      },
+      {
+        "id": 6,
+        "name": "Weak Foot Challenge",
+        "icon": "🦶",
+        "description": "Completed the weak-foot challenge",
+        "earnedDate": "Jul 2026"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "firstName": "Michael",
+    "lastName": "Carrick",
+    "dateOfBirth": "2020-12-31",
+    "ageGroup": "U17",
+    "team": "U17 Academy",
+    "jerseyNumber": 10,
+    "primaryPosition": "Attacking Midfielder",
+    "secondaryPosition": "Forward",
+    "preferredFoot": "Left",
+    "yearsAtAcademy": 4,
+    "season": "2026",
+    "photo": "assets/img/coaches/leighton.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": "Peter",
+    "lastName": "Schmeichel",
+    "dateOfBirth": "2000-12-31",
+    "ageGroup": "U17",
+    "team": "U17 Academy",
+    "jerseyNumber": 5,
+    "primaryPosition": "Center Back",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 3,
+    "season": "2026",
+    "photo": "assets/img/coaches/shana.jpg"
+  },
+  {
+    "id": 7,
+    "firstName": "Marcus",
+    "lastName": "Rashford",
+    "dateOfBirth": "2015-12-31",
+    "ageGroup": "Over 18",
+    "team": "Senior Academy",
+    "jerseyNumber": 9,
+    "primaryPosition": "Forward",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 4,
+    "season": "2026",
+    "photo": "assets/img/coaches/fabian.jpg",
+    "badges": [
+      {
+        "id": 1,
+        "name": "First Goal",
+        "icon": "⚽",
+        "description": "Scored first academy goal",
+        "earnedDate": "Mar 2024"
+      },
+      {
+        "id": 2,
+        "name": "Passing Master",
+        "icon": "🎯",
+        "description": "Completed the passing challenge",
+        "earnedDate": "Jun 2025"
+      },
+      {
+        "id": 3,
+        "name": "Training Streak",
+        "icon": "🔥",
+        "description": "Attended 10 training sessions in a row",
+        "earnedDate": "Jan 2026"
+      },
+      {
+        "id": 4,
+        "name": "Player of the Week",
+        "icon": "⭐",
+        "description": "Outstanding training performance",
+        "earnedDate": "Apr 2026"
+      },
+      {
+        "id": 5,
+        "name": "Great Teammate",
+        "icon": "🤝",
+        "description": "Demonstrated outstanding teamwork",
+        "earnedDate": "May 2026"
+      },
+      {
+        "id": 6,
+        "name": "Weak Foot Challenge",
+        "icon": "🦶",
+        "description": "Completed the weak-foot challenge",
+        "earnedDate": "Jul 2026"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "firstName": "Harry",
+    "lastName": "Maguire",
+    "dateOfBirth": "2015-12-31",
+    "ageGroup": "U12",
+    "team": "U12 Development",
+    "jerseyNumber": 17,
+    "primaryPosition": "Defender",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 2,
+    "season": "2026",
+    "photo": "assets/img/coaches/fabian.jpg"
+  },
+  {
+    "id": 9,
+    "firstName": "Bruno",
+    "lastName": "Fernandes",
+    "dateOfBirth": "2007-12-31",
+    "ageGroup": "U12",
+    "team": "U12 Development",
+    "jerseyNumber": 7,
+    "primaryPosition": "Midfielder",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 2,
+    "season": "2026",
+    "photo": "assets/img/coaches/shana.jpg"
+  },
+  {
+    "id": 10,
+    "firstName": "Mason",
+    "lastName": "Mount",
+    "dateOfBirth": "2019-12-31",
+    "ageGroup": "U12",
+    "team": "U12 Development",
+    "jerseyNumber": 7,
+    "primaryPosition": "Midfielder",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 2,
+    "season": "2026",
+    "photo": "assets/img/coaches/dwayne.jpg"
+  },
+  {
+    "id": 11,
+    "firstName": "Kobee",
+    "lastName": "Mainoo",
+    "dateOfBirth": "2020-12-31",
+    "ageGroup": "U12",
+    "team": "U12 Development",
+    "jerseyNumber": 7,
+    "primaryPosition": "Midfielder",
+    "preferredFoot": "Right",
+    "yearsAtAcademy": 2,
+    "season": "2026",
+    "photo": "assets/img/coaches/malcolm.jpg"
+  }
+]

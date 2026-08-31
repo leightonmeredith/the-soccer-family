@@ -39,11 +39,6 @@ export class PlayersComponent {
 
   readonly selectedPlayer = signal<Player | null>(null);
 
-  /*
-   * Finds which tabs actually contain players.
-   *
-   * Empty age groups will never appear.
-   */
   readonly availableTabs = computed<RosterTab[]>(() => {
     const players = this.players();
 
@@ -119,8 +114,8 @@ export class PlayersComponent {
   }
 
   getFullName(player: Player): string {
-  const isSeniorPlayer = computed(() => player.age >= 18);
-  return `${player.firstName} ${isSeniorPlayer() ? player.lastName : player.lastName.substring(0, 1) + '.'}`;
+    const isSeniorPlayer = computed(() => player.age >= 18);
+    return `${player.firstName} ${isSeniorPlayer() ? player.lastName : player.lastName.substring(0, 1) + '.'}`;
   }
 
   private getPlayerGroup(age: number): RosterGroup {
